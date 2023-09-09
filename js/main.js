@@ -1,32 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-  try {
-    const calc = document.querySelector(".calc");
-    const calcDistanceInputs = calc.querySelectorAll(".calc_distance-input");
-    const btns = calc.querySelectorAll('.calc__nav-btn');
-    const tabs = calc.querySelectorAll('.calc_grid');
+  const calc = document.querySelector(".calc");
+  const calcDistanceInputs = calc.querySelectorAll(".calc_distance-input");
+  const btns = calc.querySelectorAll(".calc__nav-btn");
+  const tabs = calc.querySelectorAll(".calc_grid");
 
+  if (calc) {
     function clicBtnFoo() {
       const btn = this;
       const id = btn.dataset.id;
-      btns.forEach(btn => btn.classList.remove('active'));
-      tabs.forEach(tab => tab.classList.remove('active'));
-      btn.classList.add('active');
+      btns.forEach((btn) => btn.classList.remove("active"));
+      tabs.forEach((tab) => tab.classList.remove("active"));
+      btn.classList.add("active");
       const currentTab = calc.querySelector(`#${id}`);
-      currentTab.classList.add('active');
+      currentTab.classList.add("active");
     }
 
-    btns.forEach(btn => {
-      btn.addEventListener('click', clicBtnFoo);
-    })
+    btns.forEach((btn) => {
+      btn.addEventListener("click", clicBtnFoo);
+    });
 
-    function calcDistancePrice(input) {
+    function calcDistancePrice(input,price) {
       const value = input.value;
       const distance = Number(value);
 
-      const datasetPrice = input.dataset.price;
-      const price = Number(datasetPrice);
-
-      const distancePrice = price * distance;
+      const distancePrice = distance * price;
 
       return distancePrice;
     }
@@ -55,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function calcTotalPriceFoo(target) {
-      const tab = target.closest('.calc_grid');
+      const tab = target.closest(".calc_grid");
 
       const outputElem = tab.querySelector(".calc_total-output");
 
@@ -65,29 +62,42 @@ document.addEventListener("DOMContentLoaded", () => {
       const complexityInputs = tab.querySelectorAll(
         '.calc_input-hidden[name="complexity"]:checked'
       );
-      const distanseInput = tab.querySelector('.calc_distance-input');
-      const transportInput = tab.querySelector('.calc_input-hidden[name="transport"]:checked');
-      const wheelInput = tab.querySelector('.calc_input-hidden[name="wheel"]:checked');
+      const distanseInput = tab.querySelector(".calc_distance-input");
+      const transportInput = tab.querySelector(
+        '.calc_input-hidden[name="transport"]:checked'
+      );
+      const wheelInput = tab.querySelector(
+        '.calc_input-hidden[name="wheel"]:checked'
+      );
 
-      const transportPrice = transportInput ? Number(transportInput.dataset.price) : 0;
+      const transportPrice = transportInput
+        ? Number(transportInput.dataset.price)
+        : 0;
+
+      const priceKM = transportInput ? Number(transportInput.dataset.priceKm)
+      : 0;
       const wheelPrice = wheelInput ? Number(wheelInput.dataset.price) : 0;
       let servicesPrice = 0;
       let complexityPrice = 0;
-      const distancePrice = calcDistancePrice(distanseInput);
+      const distancePrice = calcDistancePrice(distanseInput,priceKM);
 
-
-      servicesInputs.forEach(input => {
+      servicesInputs.forEach((input) => {
         const price = Number(input.dataset.price);
         servicesPrice += price;
       });
 
-      complexityInputs.forEach(input => {
+      complexityInputs.forEach((input) => {
         const price = Number(input.dataset.price);
         complexityPrice += price;
       });
       let total = 0;
 
-      total = transportPrice + distancePrice + servicesPrice + wheelPrice + complexityPrice;
+      total =
+        transportPrice +
+        distancePrice +
+        servicesPrice +
+        wheelPrice +
+        complexityPrice;
 
       if (transportInput) {
         outputElem.textContent = total;
@@ -98,39 +108,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function fooClickCalcBlock(e) {
       const target = event.target;
-      const tab = target.closest('.calc_grid');
+      const tab = target.closest(".calc_grid");
       let id;
       if (tab) id = tab.id;
 
-      if (id === 'calc-tab1' &&
-        target.classList.contains("calc_input-hidden")) {
+      if (
+        id === "calc-tab1" &&
+        target.classList.contains("calc_input-hidden")
+      ) {
         calcTotalPriceFoo(target);
       }
 
       if (
-        id === 'calc-tab2' &&
-        target.classList.contains("calc_input-hidden")) {
+        id === "calc-tab2" &&
+        target.classList.contains("calc_input-hidden")
+      ) {
         calcTotalPriceFoo(target);
       }
 
-      if (id === 'calc-tab3' &&
-        target.classList.contains("calc_input-hidden")) {
+      if (
+        id === "calc-tab3" &&
+        target.classList.contains("calc_input-hidden")
+      ) {
         calcTotalPriceFoo(target);
       }
 
-      if (target.classList.contains('calc_distance-input')
-        && target.value.length === 1
-        && target.value === '0') {
+      if (
+        target.classList.contains("calc_distance-input") &&
+        target.value.length === 1 &&
+        target.value === "0"
+      ) {
         target.selectionStart = 1;
       }
     }
 
-    calcDistanceInputs.forEach(calcDistanceInput => {
+    calcDistanceInputs.forEach((calcDistanceInput) => {
       calcDistanceInput.addEventListener("input", changeDistanceInputFoo);
-    })
+    });
 
     calc.addEventListener("click", fooClickCalcBlock);
-  } catch (error) {
-    console.log(err, 'не удается выполнить скрипт')
   }
 });
