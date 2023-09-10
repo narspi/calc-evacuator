@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", clicBtnFoo);
     });
 
-    function calcDistancePrice(input,price) {
+    function calcDistancePrice(input, price) {
       const value = input.value;
       const distance = Number(value);
 
@@ -74,21 +74,30 @@ document.addEventListener("DOMContentLoaded", () => {
         ? Number(transportInput.dataset.price)
         : 0;
 
-      const priceKM = transportInput ? Number(transportInput.dataset.priceKm)
-      : 0;
+      const priceKM = transportInput
+        ? Number(transportInput.dataset.priceKm)
+        : 0;
       const wheelPrice = wheelInput ? Number(wheelInput.dataset.price) : 0;
       let servicesPrice = 0;
       let complexityPrice = 0;
-      const distancePrice = calcDistancePrice(distanseInput,priceKM);
+      const distancePrice = calcDistancePrice(distanseInput, priceKM);
 
       servicesInputs.forEach((input) => {
-        const price = Number(input.dataset.price);
+        const dataset = input.dataset;
+        const price = Number(dataset.price);
         servicesPrice += price;
       });
 
+      let countDoubleTarget = 0;
       complexityInputs.forEach((input) => {
-        const price = Number(input.dataset.price);
-        complexityPrice += price;
+        const dataset = input.dataset;
+        const isKpp = "kpp" in dataset;
+        const isSteeringWheel = 'steeringWheel' in dataset;
+        if (isKpp || isSteeringWheel) countDoubleTarget++;
+        if (!((isKpp || isSteeringWheel) && countDoubleTarget === 2)) {
+          const price = Number(dataset.price);
+          complexityPrice += price;
+        }
       });
       let total = 0;
 

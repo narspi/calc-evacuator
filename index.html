@@ -190,17 +190,17 @@
           <fieldset class="calc_fieldset">
             <legend class="calc_legend">Сложность</legend>
             <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="2000" />
+              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="2000" data-steering-wheel/>
               <span class="calc_rectange"></span>
               <span class="calc_text">Заблокирован руль</span>
             </label>
             <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="2000" />
+              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="2000" data-kpp/>
               <span class="calc_rectange"></span>
               <span class="calc_text">Заблокирована КПП</span>
             </label>
             <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="500" />
+              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="500"/>
               <span class="calc_rectange"></span>
               <span class="calc_text">Отсутствует буксировочный крюк</span>
             </label>
@@ -272,100 +272,50 @@
               <span class="calc_radio"></span>
               <span class="calc_text">Перевозка бытовок и вагончиков</span>
             </label>
+            <label class="calc_label">
+              <input class="calc_input-hidden" type="radio" name="transport" data-price="10000" data-price-km="100"/>
+              <span class="calc_radio"></span>
+              <span class="calc_text">Рабочая смена ( строительные работы,перемещение) - 6ч</span>
+            </label>
+            <label class="calc_label">
+              <input class="calc_input-hidden" type="radio" name="transport" data-price="10000" data-price-km="100"/>
+              <span class="calc_radio"></span>
+              <span class="calc_text">Рабочая смена ( строительные работы,перемещение) - 7ч</span>
+            </label>
+            <label class="calc_label">
+              <input class="calc_input-hidden" type="radio" name="transport" data-price="10000" data-price-km="100"/>
+              <span class="calc_radio"></span>
+              <span class="calc_text">Рабочая смена ( строительные работы,перемещение) - 8ч</span>
+            </label>
           </fieldset>
         </div>
         <div class="calc_col">
           <fieldset class="calc_fieldset">
             <legend class="calc_legend">Дополнительные услуги</legend>
             <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="services" data-price="1800" />
+              <input class="calc_input-hidden" type="checkbox" name="services" data-price="0" />
               <span class="calc_rectange"></span>
-              <span class="calc_text">Подвоз топлива (включая 5 литров)</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="services" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Перевозка автомобиля без клиента</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="services" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Заезд за клиентом,за документами</span>
+              <span class="calc_text">Перевозка автомобиля без клиента - Бесплатно</span>
             </label>
             <label class="calc_label">
               <input class="calc_input-hidden" type="checkbox" name="services" data-price="500" />
               <span class="calc_rectange"></span>
-              <span class="calc_text">Ночная эвакуация (с 22:00 до 6:00)</span>
+              <span class="calc_text">Заезд за клиентом, за документами</span>
+            </label>
+            <label class="calc_label">
+              <input class="calc_input-hidden" type="checkbox" name="services" data-price="0" />
+              <span class="calc_rectange"></span>
+              <span class="calc_text">Ночная эвакуация (с 22:00 до 6:00) - Бесплатно</span>
             </label>
           </fieldset>
         </div>
         <div class="calc_col">
           <fieldset class="calc_fieldset">
-            <legend class="calc_legend">Сложность</legend>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Заблокирован руль</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Заблокирована КПП /АКПП</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Отсутствует буксировочный крюк</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="1500" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Большое количество поломок при ДТП</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Вытаскивание из ряда</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Вытаскивание из гаража</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="2500" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Вытаскивание из кювета</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Вытаскивание вылетевшего за бордюр а/м</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="2500" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Переворачивание а/м с крыши</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="1000" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Эвакуация а/м с газона,тротуара</span>
-            </label>
-            <label class="calc_label">
-              <input class="calc_input-hidden" type="checkbox" name="complexity" data-price="0" />
-              <span class="calc_rectange"></span>
-              <span class="calc_text">Постановка а/м в рабочую зону автосервиса - Бесплатно</span>
-            </label>
-          </fieldset>
-        </div>
-        <div class="calc_col">
-          <fieldset class="calc_fieldset">
-            <legend class="calc_legend">Замена колеса</legend>
+            <legend class="calc_legend">Оторванные колеса</legend>
             <label class="calc_label">
               <input class="calc_input-hidden" type="radio" name="wheel" data-price="0" />
               <span class="calc_radio"></span>
-              <span class="calc_text">Не требуется</span>
+              <span class="calc_text">Отсутствуют</span>
             </label>
             <label class="calc_label">
               <input class="calc_input-hidden" type="radio" name="wheel" data-price="1000" />
@@ -411,58 +361,53 @@
             <legend class="calc_legend">Цены на услуги грузового эвакуатора</legend>
             <div class="calc_legend-transport">
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="8000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="12000" data-price-km="120"/>
                 <span class="calc_radio"></span>
-                <span class="calc_text">Работа эвакуатора в г. Подольск</span>
+                <span class="calc_text">Работа эвакуатора в Москве и МО</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="10000" />
-                <span class="calc_radio"></span>
-                <span class="calc_text">Работа эвакуатора за пределами г. Подольск</span>
-              </label>
-              <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="10000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="12000" data-price-km="120"/>
                 <span class="calc_radio"></span>
                 <span class="calc_text">Эвакуация по городу без груза одиночка, грузовик 3 оси (подача, воздух,
                   зацеп-расцеп)</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="8000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="15000" data-price-km="150"/>
                 <span class="calc_radio"></span>
                 <span class="calc_text">Автобус (до 40 мест)</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="10000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="20000" data-price-km="200"/>
                 <span class="calc_radio"></span>
                 <span class="calc_text">Автобус (свыше 40 мест)</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="6000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="10000" data-price-km="100"/>
                 <span class="calc_radio"></span>
                 <span class="calc_text">Коммерческие автомобили от 3000кг до 5000кг</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="10000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="12000" data-price-km="120"/>
                 <span class="calc_radio"></span>
                 <span class="calc_text">Коммерческие автомобили от 5000кг до 10000кг</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="15000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="15000" data-price-km="150"/>
                 <span class="calc_radio"></span>
                 <span class="calc_text">Коммерческие автомобили от 10000 кг пустой</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="17000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="15000" data-price-km="150"/>
                 <span class="calc_radio"></span>
-                <span class="calc_text">Коммерческие автомобили от 10000кг с грузом</span>
+                <span class="calc_text">Коммерческие автомобили от 10000 кг с грузом</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="15000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="15000" data-price-km="150"/>
                 <span class="calc_radio"></span>
                 <span class="calc_text">Сцепка по городу без груза</span>
               </label>
               <label class="calc_label">
-                <input class="calc_input-hidden" type="radio" name="transport" data-price="15000" />
+                <input class="calc_input-hidden" type="radio" name="transport" data-price="15000" data-price-km="150"/>
                 <span class="calc_radio"></span>
                 <span class="calc_text">Спецтехника(сложная эвакуация)</span>
               </label>
