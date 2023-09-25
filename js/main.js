@@ -20,12 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function calcDistancePrice(input, price) {
-      const value = input.value;
-      const distance = Number(value);
-
-      const distancePrice = distance * price;
-
-      return distancePrice;
+      if (price === 0) {
+        input.disabled = true;
+        const wrapper = input.closest('.calc__distance-wrapper');
+        wrapper.style.display = 'none';
+        return 0;
+      } else {
+        input.disabled = false;
+        const wrapper = input.closest('.calc__distance-wrapper');
+        wrapper.style.display = null;
+        const value = input.value;
+        const distance = Number(value) - 5;
+        if (distance <= 0) return 0;
+        const distancePrice = distance * price;
+        return distancePrice;
+      }
     }
 
     function changeDistanceInputFoo() {
