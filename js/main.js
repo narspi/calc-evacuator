@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const calcDistanceInputs = calc.querySelectorAll(".calc_distance-input");
   const btns = calc.querySelectorAll(".calc__nav-btn");
   const tabs = calc.querySelectorAll(".calc_grid");
+  const arMultiplies = calc.querySelectorAll('[contenteditable]');
+  console.log(arMultiplies)
 
   if (calc) {
     function clicBtnFoo() {
@@ -22,16 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
     function calcDistancePrice(input, price) {
       if (price === 0) {
         input.disabled = true;
-        const wrapper = input.closest('.calc__distance-wrapper');
-        wrapper.style.display = 'none';
+        const wrapper = input.closest(".calc__distance-wrapper");
+        wrapper.style.display = "none";
         return 0;
       } else {
         input.disabled = false;
-        const wrapper = input.closest('.calc__distance-wrapper');
+        const wrapper = input.closest(".calc__distance-wrapper");
         wrapper.style.display = null;
         const value = input.value;
-        const distance = Number(value) - 5;
-        if (distance <= 0) return 0;
+        const freeDistanse = input
+        ? Number(input.dataset.distanceFree)
+        : 0;
+        const distance = Number(value);
+        if (distance <= freeDistanse) return 0;
         const distancePrice = distance * price;
         return distancePrice;
       }
@@ -79,13 +84,26 @@ document.addEventListener("DOMContentLoaded", () => {
         '.calc_input-hidden[name="wheel"]:checked'
       );
 
+      const multiplierInput = transportInput.parentNode.querySelector('[data-multiplier]');
+      let multiplierNum = 1;
+      if (multiplierInput) {
+        multiplierInput.setAttribute('contenteditable',true);
+        if (target === transportInput) multiplierInput.focus();
+        const value = multiplierInput.textContent;
+        if (value) multiplierNum = Number(value); 
+      } else {
+        const elem = tab.querySelector('[data-multiplier]');
+        elem.setAttribute('contenteditable',false);
+      }
+      
       const transportPrice = transportInput
-        ? Number(transportInput.dataset.price)
+        ? Number(transportInput.dataset.price) * multiplierNum
         : 0;
 
       const priceKM = transportInput
         ? Number(transportInput.dataset.priceKm)
         : 0;
+
       const wheelPrice = wheelInput ? Number(wheelInput.dataset.price) : 0;
       let servicesPrice = 0;
       let complexityPrice = 0;
@@ -101,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       complexityInputs.forEach((input) => {
         const dataset = input.dataset;
         const isKpp = "kpp" in dataset;
-        const isSteeringWheel = 'steeringWheel' in dataset;
+        const isSteeringWheel = "steeringWheel" in dataset;
         if (isKpp || isSteeringWheel) countDoubleTarget++;
         if (!((isKpp || isSteeringWheel) && countDoubleTarget === 2)) {
           const price = Number(dataset.price);
@@ -163,6 +181,13 @@ document.addEventListener("DOMContentLoaded", () => {
     calcDistanceInputs.forEach((calcDistanceInput) => {
       calcDistanceInput.addEventListener("input", changeDistanceInputFoo);
     });
+
+    arMultiplies.forEach((MultiplierInput)=>{
+      MultiplierInput.addEventListener("input", ()=>{
+        const input = MultiplierInput.parentNode.parentNode.querySelector('input');
+        calcTotalPriceFoo(input);
+      });
+    })
 
     calc.addEventListener("click", fooClickCalcBlock);
   }

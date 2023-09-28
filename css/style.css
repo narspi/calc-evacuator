@@ -161,6 +161,17 @@ body {
   font-weight: 300;
 }
 
+.calc_text span[contenteditable="true"] {
+  min-width: 20px;
+  text-align: center;
+  align-self: center;
+  display: inline-block;
+  padding: 5px;
+  background-color: rgba(255, 229, 143, 0.863);
+  margin-top: -5px;
+  border-radius: 3px;
+}
+
 .calc__distance-wrapper,.calc__wheel {
   margin-top: 20px;
 }
