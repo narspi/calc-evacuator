@@ -11,7 +11,6 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body>
     <div class="container">
       <section class="calc">
@@ -241,7 +240,14 @@
                   />
                   <span class="calc_radio"></span>
                   <span class="calc_text"
-                    >*Эвакуация спецтехники - <span data-multiplier contenteditable="false" oninput="this.textContent = this.textContent.replace(/[^0-9.]/g, '');">1</span> тонна</span
+                    >*Эвакуация спецтехники -
+                    <span
+                      data-multiplier
+                      contenteditable="false"
+                      oninput="this.textContent = this.textContent.replace(/[^0-9.]/g, '');"
+                      >1</span
+                    >
+                    тонна</span
                   >
                 </label>
               </div>
@@ -579,6 +585,25 @@
                 >
               </label>
             </fieldset>
+            <div class="calc__distance-wrapper">
+              <p class="calc__distance-descr">
+                Растояние от места погрузки<br />
+                До места выгрузки траспортного средства<br />
+                <span>*До 5 км бесплатно</span>
+              </p>
+              <div class="calc_distance">
+                <input
+                  id="distance2"
+                  class="calc_distance-input"
+                  type="text"
+                  value="0"
+                  maxlength="3"
+                  inputmode="numeric"
+                  data-distance-free="5"
+                />
+                <label for="distance2" class="calc_distance-label"></label>
+              </div>
+            </div>
           </div>
           <div class="calc_col">
             <fieldset class="calc_fieldset">
@@ -618,8 +643,6 @@
                 >
               </label>
             </fieldset>
-          </div>
-          <div class="calc_col">
             <fieldset class="calc_fieldset">
               <legend class="calc_legend">Оторванные колеса</legend>
               <label class="calc_label">
@@ -673,25 +696,8 @@
                 <span class="calc_text">4 колеса</span>
               </label>
             </fieldset>
-            <div class="calc__distance-wrapper">
-              <p class="calc__distance-descr">
-                Растояние от места погрузки<br />
-                До места выгрузки траспортного средства<br />
-                <span>*До 5 км бесплатно</span>
-              </p>
-              <div class="calc_distance">
-                <input
-                  id="distance2"
-                  class="calc_distance-input"
-                  type="text"
-                  value="0"
-                  maxlength="3"
-                  inputmode="numeric"
-                  data-distance-free="5"
-                />
-                <label for="distance2" class="calc_distance-label"></label>
-              </div>
-            </div>
+          </div>
+          <div class="calc_col">
             <p class="calc_total">
               Стоимость эвакуации -
               <span class="calc_total-output">0</span>&nbsp;руб.

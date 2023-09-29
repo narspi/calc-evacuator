@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btns = calc.querySelectorAll(".calc__nav-btn");
   const tabs = calc.querySelectorAll(".calc_grid");
   const arMultiplies = calc.querySelectorAll('[contenteditable]');
-  console.log(arMultiplies)
 
   if (calc) {
     function clicBtnFoo() {
@@ -93,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (value) multiplierNum = Number(value); 
       } else {
         const elem = tab.querySelector('[data-multiplier]');
-        elem.setAttribute('contenteditable',false);
+        if (elem) elem.setAttribute('contenteditable',false);
       }
       
       const transportPrice = transportInput

@@ -167,7 +167,8 @@ body {
   align-self: center;
   display: inline-block;
   padding: 5px;
-  background-color: rgba(255, 229, 143, 0.863);
+  background-color: #ccc;
+  color: #000;
   margin-top: -5px;
   border-radius: 3px;
 }
