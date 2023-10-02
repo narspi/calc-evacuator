@@ -11,7 +11,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #db5461;
 }
 
 .container {
@@ -21,6 +20,7 @@ body {
 }
 
 .calc {
+  background-color: #db5461;
   color: #fff;
   padding: 50px;
   max-width: 1000px;
@@ -162,16 +162,15 @@ body {
 }
 
 .calc_text span[contenteditable="true"] {
-  min-width: 30px;
+  min-width: 20px;
   text-align: center;
   align-self: center;
   display: inline-block;
   padding: 5px;
-  background-color: #fff;
+  background-color: #ccc;
   color: #000;
   margin-top: -5px;
   border-radius: 3px;
-  font-weight: 500;
 }
 
 .calc__distance-wrapper,.calc__wheel {
@@ -188,7 +187,7 @@ body {
 
 .calc__distance-descr span {
   font-size: 14px;
-  color: rgba(255, 229, 143, 0.774);
+  color: rgba(255, 229, 143, 0.863);
 }
 
 .calc_distance {
