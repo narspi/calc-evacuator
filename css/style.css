@@ -162,15 +162,16 @@ body {
 }
 
 .calc_text span[contenteditable="true"] {
-  min-width: 20px;
+  min-width: 30px;
   text-align: center;
   align-self: center;
   display: inline-block;
   padding: 5px;
-  background-color: #ccc;
+  background-color: #e7e5e5;
   color: #000;
   margin-top: -5px;
   border-radius: 3px;
+  font-weight: 500;
 }
 
 .calc__distance-wrapper,.calc__wheel {
@@ -187,7 +188,7 @@ body {
 
 .calc__distance-descr span {
   font-size: 14px;
-  color: rgba(255, 229, 143, 0.863);
+  color: rgba(255, 229, 143, 0.774);
 }
 
 .calc_distance {
