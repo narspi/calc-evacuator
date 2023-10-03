@@ -11,7 +11,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #db5461;
 }
 
 .container {
@@ -21,20 +20,22 @@ body {
 }
 
 .calc {
+  background-color: #220250;
   color: #fff;
   padding: 50px;
   max-width: 1000px;
   margin: 0 auto;
+  border-radius: 20px;
 }
 
 .calc__nav {
   display: flex;
   align-items: stretch;
+  gap: 10px;
   margin-bottom: 30px;
   list-style: none;
   padding-left: 0;
   margin-top: 0;
-  border-radius: 30px;
   overflow: hidden;
 }
 
@@ -55,10 +56,16 @@ body {
   cursor: pointer;
   background-color: #fff;
   color: #333;
+  border-radius: 15px 30px;
+}
+
+.calc__nav-btn:hover {
+  background-color: #0d3aac;
+  color: #fff;
 }
 
 .calc__nav-btn.active {
-  background-color: rgb(109, 21, 9);
+  background-color: #285ce0;
   color: #fff;
 }
 
@@ -92,10 +99,15 @@ body {
 }
 
 .calc_legend {
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 18px;
-  margin-bottom: 15px;
   text-transform: uppercase;
+}
+
+.calc_legend.has-dropdown {
+  margin-bottom: 0;
+  cursor: pointer;
 }
 
 .calc_label {
@@ -162,21 +174,25 @@ body {
 }
 
 .calc_text span[contenteditable="true"] {
-  min-width: 20px;
+  min-width: 30px;
   text-align: center;
   align-self: center;
   display: inline-block;
   padding: 5px;
-  background-color: #ccc;
+  background-color: #fff;
+  font-weight: 500;
   color: #000;
   margin-top: -5px;
   border-radius: 3px;
 }
 
-.calc__distance-wrapper,.calc__wheel {
-  margin-top: 20px;
+.calc__wheel {
+  margin: 15px 0;
 }
 
+.calc__distance-wrapper {
+  margin-top: 20px;
+}
 
 .calc__distance-descr {
   margin-top: 0;
@@ -262,6 +278,28 @@ body {
 .calc_total {
   font-size: 24px;
   font-weight: 700;
+}
+
+.calc__dropdown {
+  padding: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition-property: max-height,padding,visibility;
+  transition-delay: 0s,0s,0.3s;
+  transition-duration: 0.3s,0.3s,0s;
+  transition-timing-function: cubic-bezier(0, 1, 0, 1), cubic-bezier(0, 1, 0, 1),cubic-bezier(0, 1, 0, 1);
+  will-change: max-height;
+}
+
+.calc__dropdown.drop-open {
+  padding: 10px 0;
+  visibility: visible;
+  max-height: 3000px;
+  transition-property: max-height,padding,visibility;
+  transition-delay: 0s,0s,0s;
+  transition-duration: 0.3s,0.3s,0s;
+  transition-timing-function: cubic-bezier(0, 1, 0, 1), cubic-bezier(0, 1, 0, 1),cubic-bezier(0, 1, 0, 1);
 }
 
 @media (max-width: 900px) {

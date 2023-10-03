@@ -52,6 +52,17 @@
                     class="calc_input-hidden"
                     type="radio"
                     name="transport"
+                    data-price="5000"
+                    data-price-km="80"
+                  />
+                  <span class="calc_radio"></span>
+                  <span class="calc_text">Эвакуатор для спорткаров</span>
+                </label>
+                <label class="calc_label">
+                  <input
+                    class="calc_input-hidden"
+                    type="radio"
+                    name="transport"
                     data-price="3500"
                     data-price-km="70"
                   />
@@ -131,17 +142,6 @@
                   />
                   <span class="calc_radio"></span>
                   <span class="calc_text">Эвакуация для минивэнов от 2т</span>
-                </label>
-                <label class="calc_label">
-                  <input
-                    class="calc_input-hidden"
-                    type="radio"
-                    name="transport"
-                    data-price="5000"
-                    data-price-km="80"
-                  />
-                  <span class="calc_radio"></span>
-                  <span class="calc_text">Эвакуатор для спорткаров</span>
                 </label>
                 <label class="calc_label">
                   <input
@@ -253,7 +253,7 @@
               </div>
             </fieldset>
           </div>
-          <div class="calc_col">
+          <div class="calc_col span-2-desc">
             <div class="calc__services">
               <fieldset class="calc_fieldset">
                 <legend class="calc_legend">Дополнительные услуги</legend>
@@ -360,29 +360,9 @@
                 </label>
               </fieldset>
             </div>
-            <div class="calc__distance-wrapper">
-              <p class="calc__distance-descr">
-                Растояние от места погрузки<br />
-                До места выгрузки траспортного средства<br />
-                <span>*До 5 км бесплатно</span>
-              </p>
-              <div class="calc_distance">
-                <input
-                  id="distance1"
-                  class="calc_distance-input"
-                  type="text"
-                  value="0"
-                  maxlength="3"
-                  inputmode="numeric"
-                  data-distance-free="5"
-                />
-                <label for="distance1" class="calc_distance-label"></label>
-              </div>
-            </div>
-          </div>
-          <div class="calc_col">
             <fieldset class="calc_fieldset">
-              <legend class="calc_legend">Сложность</legend>
+              <legend class="calc_legend has-dropdown">Сложность</legend>
+              <div class="calc__dropdown">
               <label class="calc_label">
                 <input
                   class="calc_input-hidden"
@@ -499,7 +479,27 @@
                 <span class="calc_rectange"></span>
                 <span class="calc_text">Замена колеса - Бесплатно</span>
               </label>
+              </div>
             </fieldset>
+            <div class="calc__distance-wrapper">
+              <p class="calc__distance-descr">
+                Растояние от места погрузки<br />
+                До места выгрузки траспортного средства<br />
+                <span>*До 5 км бесплатно</span>
+              </p>
+              <div class="calc_distance">
+                <input
+                  id="distance1"
+                  class="calc_distance-input"
+                  type="text"
+                  value="0"
+                  maxlength="3"
+                  inputmode="numeric"
+                  data-distance-free="5"
+                />
+                <label for="distance1" class="calc_distance-label"></label>
+              </div>
+            </div>
           </div>
           <div class="calc_col span-2-desc">
             <p class="calc_total">

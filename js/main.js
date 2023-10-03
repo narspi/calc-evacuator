@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.addEventListener("click", clicBtnFoo);
     });
 
-    function calcDistancePrice(input, price) {
-      if (price === 0) {
+    function calcDistancePrice(input, price, transportInput) {
+      if (transportInput !== null && price === 0) {
         input.disabled = true;
         const wrapper = input.closest(".calc__distance-wrapper");
         wrapper.style.display = "none";
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         '.calc_input-hidden[name="wheel"]:checked'
       );
 
-      const multiplierInput = transportInput.parentNode.querySelector('[data-multiplier]');
+      const multiplierInput = transportInput? transportInput.parentNode.querySelector('[data-multiplier]') : null;
       let multiplierNum = 1;
       if (multiplierInput) {
         multiplierInput.setAttribute('contenteditable',true);
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const wheelPrice = wheelInput ? Number(wheelInput.dataset.price) : 0;
       let servicesPrice = 0;
       let complexityPrice = 0;
-      const distancePrice = calcDistancePrice(distanseInput, priceKM);
+      const distancePrice = calcDistancePrice(distanseInput, priceKM, transportInput);
 
       servicesInputs.forEach((input) => {
         const dataset = input.dataset;
@@ -175,6 +175,23 @@ document.addEventListener("DOMContentLoaded", () => {
       ) {
         target.selectionStart = 1;
       }
+
+      if (target.classList.contains('has-dropdown')) {
+        const dropItem = target.nextElementSibling;
+        if (target.classList.contains('drop-open')) {
+          target.classList.remove('drop-open');
+          dropItem.classList.remove('drop-open');
+        } else {
+          const tab = target.closest('.calc_grid');
+          const dropLegends = tab.querySelectorAll('.calc_legend.has-dropdown');
+          const dropItems = tab.querySelectorAll('.calc__dropdown');
+          dropItems.forEach(item=>item.classList.remove('drop-open'));
+          dropLegends.forEach(item=>item.classList.remove('drop-open'));
+          target.classList.add('drop-open');
+          dropItem.classList.add('drop-open');
+        }
+        calcTotalPriceFoo(target);
+      }
     }
 
     calcDistanceInputs.forEach((calcDistanceInput) => {
@@ -186,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const input = MultiplierInput.parentNode.parentNode.querySelector('input');
         calcTotalPriceFoo(input);
       });
-    })
+    });
 
     calc.addEventListener("click", fooClickCalcBlock);
   }
