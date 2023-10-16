@@ -70,17 +70,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const outputElem = tab.querySelector(".calc_total-output");
 
       const servicesInputs = tab.querySelectorAll(
-        '.calc_input-hidden[name="services"]:checked'
+        '.calc__dropdown.drop-open .calc_input-hidden[name="services"]:checked'
       );
       const complexityInputs = tab.querySelectorAll(
-        '.calc_input-hidden[name="complexity"]:checked'
+        '.calc__dropdown.drop-open .calc_input-hidden[name="complexity"]:checked'
       );
       const distanseInput = tab.querySelector(".calc_distance-input");
       const transportInput = tab.querySelector(
         '.calc_input-hidden[name="transport"]:checked'
       );
       const wheelInput = tab.querySelector(
-        '.calc_input-hidden[name="wheel"]:checked'
+        '.calc__dropdown.drop-open .calc_input-hidden[name="wheel"]:checked'
       );
 
       const multiplierInput = transportInput? transportInput.parentNode.querySelector('[data-multiplier]') : null;

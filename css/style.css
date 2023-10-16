@@ -106,6 +106,28 @@ body {
 }
 
 .calc_legend.has-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.calc_legend.has-dropdown::after {
+  content: "";
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 30.021 30.021' style='enable-background:new 0 0 30.021 30.021;' xml:space='preserve'%3e%3cpath d='M29.069,22.276c-0.791,0.932-1.917,1.409-3.052,1.409c-0.913,0-1.834-0.312-2.587-0.949l-8.42-7.152l-8.42,7.151 c-1.683,1.43-4.208,1.225-5.639-0.459c-1.43-1.686-1.224-4.208,0.46-5.64l11.01-9.351c1.493-1.269,3.686-1.269,5.178,0 l11.011,9.351C30.294,18.068,30.499,20.591,29.069,22.276z' fill='%23fff'/%3e%3c/svg%3e");
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: rotate(180deg);
+  transition: transform .3s;
+}
+
+.calc_legend.has-dropdown.drop-open::after {
+  transform: rotate(0deg);
+}
+
+.calc_legend.has-dropdown {
   margin-bottom: 0;
   cursor: pointer;
 }
@@ -290,6 +312,18 @@ body {
   transition-duration: 0.3s,0.3s,0s;
   transition-timing-function: cubic-bezier(0, 1, 0, 1), cubic-bezier(0, 1, 0, 1),cubic-bezier(0, 1, 0, 1);
   will-change: max-height;
+}
+
+.calc__dropdown.has-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.calc__dropdown.has-dropdown::after {
+  content: "";
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 30.021 30.021' style='enable-background:new 0 0 30.021 30.021;' xml:space='preserve'%3e%3cpath d='M29.069,22.276c-0.791,0.932-1.917,1.409-3.052,1.409c-0.913,0-1.834-0.312-2.587-0.949l-8.42-7.152l-8.42,7.151 c-1.683,1.43-4.208,1.225-5.639-0.459c-1.43-1.686-1.224-4.208,0.46-5.64l11.01-9.351c1.493-1.269,3.686-1.269,5.178,0 l11.011,9.351C30.294,18.068,30.499,20.591,29.069,22.276z' fill='%23fff'/%3e%3c/svg%3e");
+  width: 20px;
+  height: 20px;
 }
 
 .calc__dropdown.drop-open {
