@@ -182,11 +182,6 @@ document.addEventListener("DOMContentLoaded", () => {
           target.classList.remove('drop-open');
           dropItem.classList.remove('drop-open');
         } else {
-          const tab = target.closest('.calc_grid');
-          const dropLegends = tab.querySelectorAll('.calc_legend.has-dropdown');
-          const dropItems = tab.querySelectorAll('.calc__dropdown');
-          dropItems.forEach(item=>item.classList.remove('drop-open'));
-          dropLegends.forEach(item=>item.classList.remove('drop-open'));
           target.classList.add('drop-open');
           dropItem.classList.add('drop-open');
         }

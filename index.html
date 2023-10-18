@@ -32,7 +32,7 @@
           </li>
         </ul>
         <div class="calc_grid active" id="calc-tab1">
-          <div class="calc_col span-2-desc">
+          <div class="calc_col">
             <fieldset class="calc_fieldset">
               <legend class="calc_legend">Тип траспортного средства</legend>
               <div class="calc_legend-transport">
@@ -252,8 +252,6 @@
                 </label>
               </div>
             </fieldset>
-          </div>
-          <div class="calc_col span-2-desc">
             <div class="calc__services">
               <fieldset class="calc_fieldset">
                 <legend class="calc_legend has-dropdown">
@@ -491,36 +489,40 @@
                 </label>
               </div>
             </fieldset>
-            <div class="calc__distance-wrapper">
-              <p class="calc__distance-descr">
-                Растояние от места погрузки<br />
-                До места выгрузки траспортного средства<br />
-                <span>Расстояние от точки погрузки до точки выгрузки<br>
-                  Меньше (<) 5000 метров - бесплатно</span>
-              </p>
-              <div class="calc_distance">
-                <input
-                  id="distance1"
-                  class="calc_distance-input"
-                  type="text"
-                  value="0"
-                  maxlength="3"
-                  inputmode="numeric"
-                  data-distance-free="5"
-                />
-                <label for="distance1" class="calc_distance-label"></label>
-              </div>
-            </div>
           </div>
-          <div class="calc_col span-2-desc">
-            <p class="calc_total">
-              Стоимость эвакуации -
-              <span class="calc_total-output">0</span>&nbsp;руб.
-            </p>
+          <div class="calc_col">
+            <div class="calc__observer">
+              <div class="calc__distance-wrapper">
+                <p class="calc__distance-descr">
+                  Растояние от места погрузки<br />
+                  До места выгрузки траспортного средства<br />
+                  <span
+                    >Если интервал между местом погрузки и<br />выгрузки меньше
+                    5 км, стоимость - безоплатно</span
+                  >
+                </p>
+                <div class="calc_distance">
+                  <input
+                    id="distance1"
+                    class="calc_distance-input"
+                    type="text"
+                    value="0"
+                    maxlength="3"
+                    inputmode="numeric"
+                    data-distance-free="5"
+                  />
+                  <label for="distance1" class="calc_distance-label"></label>
+                </div>
+              </div>
+              <p class="calc_total">
+                Стоимость эвакуации -
+                <span class="calc_total-output">0</span>&nbsp;руб.
+              </p>
+            </div>
           </div>
         </div>
         <div class="calc_grid" id="calc-tab2">
-          <div class="calc_col span-2-desc">
+          <div class="calc_col">
             <fieldset class="calc_fieldset">
               <legend class="calc_legend">Цена на услуги манипулятора</legend>
               <label class="calc_label">
@@ -596,8 +598,6 @@
                 >
               </label>
             </fieldset>
-          </div>
-          <div class="calc_col span-2-desc">
             <fieldset class="calc_fieldset">
               <legend class="calc_legend has-dropdown">
                 Дополнительные услуги
@@ -698,36 +698,40 @@
                 </label>
               </div>
             </fieldset>
-            <div class="calc__distance-wrapper">
-              <p class="calc__distance-descr">
-                Растояние от места погрузки<br />
-                До места выгрузки траспортного средства<br />
-                <span>Расстояние от точки погрузки до точки выгрузки<br>
-                  Меньше (<) 5000 метров - бесплатно</span>
-              </p>
-              <div class="calc_distance">
-                <input
-                  id="distance2"
-                  class="calc_distance-input"
-                  type="text"
-                  value="0"
-                  maxlength="3"
-                  inputmode="numeric"
-                  data-distance-free="5"
-                />
-                <label for="distance2" class="calc_distance-label"></label>
-              </div>
-            </div>
           </div>
-          <div class="calc_col span-2-desc">
-            <p class="calc_total">
-              Стоимость эвакуации -
-              <span class="calc_total-output">0</span>&nbsp;руб.
-            </p>
+          <div class="calc_col">
+            <div class="calc__observer">
+              <div class="calc__distance-wrapper">
+                <p class="calc__distance-descr">
+                  Растояние от места погрузки<br />
+                  До места выгрузки траспортного средства<br />
+                  <span
+                    >Если интервал между местом погрузки и<br />выгрузки меньше
+                    5 км, стоимость - безоплатно</span
+                  >
+                </p>
+                <div class="calc_distance">
+                  <input
+                    id="distance2"
+                    class="calc_distance-input"
+                    type="text"
+                    value="0"
+                    maxlength="3"
+                    inputmode="numeric"
+                    data-distance-free="5"
+                  />
+                  <label for="distance2" class="calc_distance-label"></label>
+                </div>
+              </div>
+              <p class="calc_total">
+                Стоимость эвакуации -
+                <span class="calc_total-output">0</span>&nbsp;руб.
+              </p>
+            </div>
           </div>
         </div>
         <div class="calc_grid" id="calc-tab3">
-          <div class="calc_col span-2-desc">
+          <div class="calc_col">
             <fieldset class="calc_fieldset">
               <legend class="calc_legend">
                 Цены на услуги грузового эвакуатора
@@ -857,34 +861,102 @@
               </div>
             </fieldset>
           </div>
-          <div class="calc_col span-2-desc">
-            <div class="calc__distance-wrapper">
-              <p class="calc__distance-descr">
-                Растояние от места погрузки<br />
-                До места выгрузки траспортного средства<br />
-                <span>Расстояние от точки погрузки до точки выгрузки<br>
-                  Меньше (<) 5000 метров - бесплатно</span>
-              </p>
-              <div class="calc_distance">
-                <input
-                  id="distance3"
-                  class="calc_distance-input"
-                  type="text"
-                  value="0"
-                  maxlength="3"
-                  inputmode="numeric"
-                  data-distance-free="5"
-                />
-                <label for="distance3" class="calc_distance-label"></label>
+          <div class="calc_col">
+            <div class="calc__observer">
+              <div class="calc__distance-wrapper">
+                <p class="calc__distance-descr">
+                  Растояние от места погрузки<br />
+                  До места выгрузки траспортного средства<br />
+                  <span
+                    >Если интервал между местом погрузки и<br />выгрузки меньше
+                    5 км, стоимость - безоплатно</span
+                  >
+                </p>
+                <div class="calc_distance">
+                  <input
+                    id="distance3"
+                    class="calc_distance-input"
+                    type="text"
+                    value="0"
+                    maxlength="3"
+                    inputmode="numeric"
+                    data-distance-free="5"
+                  />
+                  <label for="distance3" class="calc_distance-label"></label>
+                </div>
               </div>
+              <p class="calc_total">
+                Стоимость эвакуации -
+                <span class="calc_total-output">0</span>&nbsp;руб.
+              </p>
             </div>
-            <p class="calc_total">
-              Стоимость эвакуации -
-              <span class="calc_total-output">0</span>&nbsp;руб.
-            </p>
           </div>
         </div>
       </section>
+      <div>
+        <br><br>
+        <h3>Текст добавлен чтоб был виден скролл для прилипающего блока</h3>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
+        asperiores nisi ratione tenetur ipsa magnam molestias, voluptate natus
+        harum adipisci dignissimos minima, sequi dolore a aliquid animi eaque
+        doloribus vitae! Rerum quos praesentium, recusandae autem laudantium,
+        facilis doloribus repellendus aspernatur, possimus repellat eius tenetur
+        quod soluta minima. Totam laborum porro ratione necessitatibus tenetur,
+        deserunt velit architecto corrupti rem nam obcaecati. Modi nobis,
+        ducimus beatae quas, porro deserunt consequuntur ea maiores laudantium
+        nulla temporibus? Eius placeat ipsam neque, consectetur impedit
+        praesentium fuga unde. Quam perferendis odio iusto, placeat consectetur
+        fuga illum. Est inventore saepe eaque non animi commodi modi atque
+        laudantium architecto. Natus vel distinctio dolorem fugit voluptates
+        libero aspernatur optio eius, aliquam quis porro tenetur illum provident
+        exercitationem recusandae quos! Dolorum minima natus quisquam
+        dignissimos officia, nam magnam veritatis vitae velit inventore,
+        laudantium expedita maiores distinctio? Impedit, voluptas vel velit
+        architecto incidunt a dolor nobis laboriosam cum. Perspiciatis, in
+        earum. Cupiditate perferendis ipsam architecto eligendi placeat dolorum
+        necessitatibus modi iusto ipsa deserunt, eius commodi quas porro ad
+        magnam dicta nesciunt quibusdam ullam quis! Perferendis quos quae beatae
+        voluptatibus, repellat autem. At ducimus ipsam alias repudiandae qui
+        consectetur porro quia iure distinctio. Non repudiandae, velit minima
+        quo blanditiis itaque similique excepturi nisi cupiditate esse facere,
+        vero tempore vitae voluptates, magni id! Incidunt officiis quam
+        consequatur obcaecati dolore maxime quas nam doloribus itaque
+        voluptatum, perspiciatis eos praesentium repellat. Quae est maxime quia
+        consequuntur, eum excepturi officiis at harum atque quaerat illum
+        itaque? Esse reiciendis quibusdam dolorum, aspernatur pariatur
+        voluptatibus. Corporis voluptatem nulla ea minima aspernatur aliquid
+        necessitatibus, rem nam reiciendis, harum adipisci. Fugiat consequatur
+        a, doloremque modi reiciendis laudantium minima. Esse, omnis. Magni
+        minima eum explicabo tenetur, rem obcaecati ullam esse alias pariatur
+        impedit at placeat possimus sint suscipit quidem expedita aliquid eaque
+        autem hic consequuntur provident libero, iure sunt? Reiciendis,
+        dignissimos. Cumque delectus quis nisi commodi nesciunt ipsa sunt
+        dolorem modi dignissimos minus, reprehenderit doloremque et porro
+        placeat! Ducimus officiis officia explicabo corporis. Consequatur facere
+        inventore itaque aliquam, tempore delectus labore. Recusandae
+        exercitationem quo nostrum blanditiis! Nemo architecto suscipit libero
+        ducimus eius quam sint, ipsum harum odio cum laboriosam consequatur eos
+        facere veritatis beatae earum quisquam excepturi repellat iusto
+        reiciendis est. Cum numquam deserunt laudantium quidem placeat. Veniam
+        maiores harum qui recusandae rem praesentium omnis quod aperiam. Odit,
+        rem voluptates possimus harum quaerat suscipit aut illo dolore qui odio
+        molestias eos. Nobis eius, quos error eveniet ipsum beatae atque earum
+        nemo enim ullam quod exercitationem voluptatum quaerat aliquam esse ad
+        magnam natus deleniti libero! Corporis dicta ab quas est rem? Eius?
+        Sunt, quia. Nihil sapiente fugiat vitae illo quae, in quibusdam
+        cupiditate ipsum. Quis dignissimos dolore recusandae architecto
+        veritatis? Provident, vitae doloremque dolor ad ratione illum quidem
+        commodi sequi debitis earum! Atque rem veniam veritatis mollitia
+        deserunt a quidem est aspernatur recusandae maiores corrupti tenetur
+        iste hic praesentium consequatur voluptatum, beatae provident earum vero
+        in culpa. Quasi dolorem earum nihil sequi! Libero eaque quae quasi
+        dolores dicta numquam perspiciatis a vel eligendi! Fugit natus provident
+        distinctio sit, hic quod ipsa amet cupiditate optio inventore quo! Nobis
+        facere optio iure molestiae similique? Optio, reprehenderit sequi
+        molestias possimus doloremque distinctio, hic aliquid fuga quia quisquam
+        a? Cupiditate hic, totam sunt alias eos saepe excepturi distinctio
+        laborum tenetur consequatur. Sed tempora itaque illo perspiciatis.
+      </div>
     </div>
     <script src="js/main.js"></script>
   </body>
